@@ -45,7 +45,15 @@ int main(){
 	{
 		printf("Compilation successful. Running the program:\n\n");
 		char run_cmd[128];
+		snprintf(run_cmd, sizeof(run_cmd), "./%s", output);
+		system(run_cmd);
 		
+		// Optional: Clean up the binary
+		remove(output);
+	} else {
+		printf("Compilation failed. Quitting zrunner.\n");
 	}
+	
+	return 0;
 
 }

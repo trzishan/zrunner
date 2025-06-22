@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     char *filename = argv[1];
 
     if (access(filename, F_OK) != 0) {
-        printf("❌ File '%s' does not exist.\n", filename);
+        printf("File '%s' does not exist.\n", filename);
         return 1;
     }
 
@@ -28,16 +28,16 @@ int main(int argc, char *argv[]) {
     char compile_cmd[256];
     snprintf(compile_cmd, sizeof(compile_cmd), "%s \"%s\" -o \"%s\" -Wall", compiler, filename, tmpout);
 
-    printf("🛠 Compiling with: %s\n", compile_cmd);
+    printf("Compiling with: %s\n", compile_cmd);
     int compile_status = system(compile_cmd);
 
     if (compile_status == 0) {
-        printf("✅ Compilation successful. Running the program:\n\n");
+        printf("Compilation successful. Running the program:\n\n");
         char run_cmd[128];
         snprintf(run_cmd, sizeof(run_cmd), "./%s", tmpout);
         system(run_cmd);
     } else {
-        printf("❌ Compilation failed.\n");
+        printf("Compilation failed.\n");
         return 1;
     }
 

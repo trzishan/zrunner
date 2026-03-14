@@ -36,6 +36,7 @@ int main(int argc, char *argv[]) {
         char run_cmd[128];
         snprintf(run_cmd, sizeof(run_cmd), "./%s", tmpout);
         system(run_cmd);
+        printf("\n\n");
     } else {
         printf("Compilation failed.\n");
         return 1;

@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 
     // Compile
     char compile_cmd[256];
-    snprintf(compile_cmd, sizeof(compile_cmd), "%s \"%s\" -o \"%s\" -Wall", compiler, filename, tmpout);
+    snprintf(compile_cmd, sizeof(compile_cmd), "%s \"%s\" -std=c++23 -o \"%s\" -Wall", compiler, filename, tmpout);
 
     printf("Compiling with: %s\n", compile_cmd);
     int compile_status = system(compile_cmd);
